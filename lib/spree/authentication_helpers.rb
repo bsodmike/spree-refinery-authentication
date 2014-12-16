@@ -1,13 +1,13 @@
 module Spree
   module AuthenticationHelpers
-    def self.included(receiver)
-      receiver.send :helper_method, :spree_login_path
-      receiver.send :helper_method, :spree_signup_path
-      receiver.send :helper_method, :spree_logout_path
-      receiver.send :helper_method, :spree_current_user
+    def self.included(_klass)
+      _klass.send :helper_method, :spree_login_path
+      _klass.send :helper_method, :spree_signup_path
+      _klass.send :helper_method, :spree_logout_path
+      _klass.send :helper_method, :spree_current_user
 
       # ensure refinery_user? helper method is always available
-      receiver.send :helper_method, :refinery_user?
+      _klass.send :helper_method, :refinery_user?
     end
 
     def spree_current_user
