@@ -12,6 +12,7 @@ module SpreeRefineryAuthentication
 
       WillPaginate::ActiveRecord::RelationMethods.send :alias_method, :per, :per_page
       WillPaginate::ActiveRecord::RelationMethods.send :alias_method, :num_pages, :total_pages
+      WillPaginate::ActiveRecord::RelationMethods.send :alias_method, :prev_page, :previous_page
 
       Spree::BaseController.send(:include, Spree::RefineryAuthenticationHelpers)
       Spree::Api::BaseController.send(:include, Spree::RefineryAuthenticationHelpers)
